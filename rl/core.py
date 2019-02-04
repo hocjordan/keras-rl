@@ -136,7 +136,7 @@ class Agent(object):
                     if self.processor is not None:
                         observation = self.processor.process_observation(observation)
                     assert observation is not None
-
+                    print('test1')
                     # Perform random starts at beginning of episode and do not record them into the experience.
                     # This slightly changes the start position between games.
                     nb_random_start_steps = 0 if nb_max_start_steps == 0 else np.random.randint(nb_max_start_steps)
@@ -205,6 +205,7 @@ class Agent(object):
                     'episode': episode,
                     'info': accumulated_info,
                 }
+                print('test2')
                 callbacks.on_step_end(episode_step, step_logs)
                 episode_step += 1
                 self.step += 1
@@ -225,7 +226,7 @@ class Agent(object):
                         'nb_steps': self.step,
                     }
                     callbacks.on_episode_end(episode, episode_logs)
-
+                    print('test1')
                     episode += 1
                     observation = None
                     episode_step = None

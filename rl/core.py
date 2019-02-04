@@ -237,7 +237,7 @@ class Agent(object):
         callbacks.on_train_end(logs={'did_abort': did_abort})
         self._on_train_end()
 
-        return history
+        return callbacks
 
     def test(self, env, nb_episodes=1, action_repetition=1, callbacks=None, visualize=True,
              nb_max_episode_steps=None, nb_max_start_steps=0, start_step_policy=None, verbose=1):

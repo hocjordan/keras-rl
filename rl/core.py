@@ -88,7 +88,7 @@ class Agent(object):
             raise ValueError('action_repetition must be >= 1, is {}'.format(action_repetition))
 
         self.training = True
-
+        STOP
         callbacks = [] if not callbacks else callbacks[:]
 
         if verbose == 1:

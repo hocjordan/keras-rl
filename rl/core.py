@@ -86,6 +86,7 @@ class Agent(object):
         if action_repetition < 1:
             raise ValueError('action_repetition must be >= 1, is {}'.format(action_repetition))
 
+        import ipdb; ipdb.set_trace() # debugging starts here
         self.training = True
 
         callbacks = [] if not callbacks else callbacks[:]

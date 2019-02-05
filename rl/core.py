@@ -81,7 +81,7 @@ class Agent(object):
         # Returns
             A `keras.callbacks.History` instance that recorded the entire training process.
         """
-        import ipdb; ipdb.set_trace() # debugging starts here
+        
         print('should run trace')
         if not self.compiled:
             raise RuntimeError('Your tried to fit your agent but it hasn\'t been compiled yet. Please call `compile()` before `fit()`.')
@@ -125,6 +125,7 @@ class Agent(object):
         try:
             while self.step < nb_steps:
                 if observation is None:  # start of a new episode
+                    import ipdb; ipdb.set_trace() # debugging starts here
                     callbacks.on_episode_begin(episode)
                     episode_step = np.int16(0)
                     episode_reward = np.float32(0)
@@ -223,6 +224,7 @@ class Agent(object):
                         'nb_episode_steps': episode_step,
                         'nb_steps': self.step,
                     }
+                    import ipdb; ipdb.set_trace() # debugging starts here
                     callbacks.on_episode_end(episode, episode_logs)
 
                     episode += 1

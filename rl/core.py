@@ -52,7 +52,7 @@ class Agent(object):
 
     def fit(self, env, nb_steps, action_repetition=1, callbacks=None, verbose=1,
             visualize=False, nb_max_start_steps=0, start_step_policy=None, log_interval=10000,
-            nb_max_episode_steps=None, reset_episode_logger):
+            nb_max_episode_steps=None, reset_episode_logger=True):
         """Trains the agent on the given environment.
 
         # Arguments

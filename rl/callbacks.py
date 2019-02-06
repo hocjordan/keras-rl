@@ -196,12 +196,13 @@ class TrainEpisodeLogger(Callback):
         }
         print(template.format(**variables))
 
-        # Free up resources.
-        #del self.episode_start[episode]
-        #del self.observations[episode]
-        #del self.rewards[episode]
-        #del self.actions[episode]
-        #del self.metrics[episode]
+        if self.reset_episode_logger:
+            # Free up resources.
+            del self.episode_start[episode]
+            del self.observations[episode]
+            del self.rewards[episode]
+            del self.actions[episode]
+            del self.metrics[episode]
 
     def on_step_end(self, step, logs):
         """ Update statistics of episode after each step """

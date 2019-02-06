@@ -42,6 +42,12 @@ class Callback(KerasCallback):
 
 
 class CallbackList(KerasCallbackList):
+
+    def _set_reset_episode_logger(self)
+    for callback in self.callbacks:
+        if callable(getattr(callback, 'reset_episode_logger', False)):
+            setattr(callback, 'reset_episode_logger', True)
+
     def _set_env(self, env):
         """ Set environment for each callback in callbackList """
         for callback in self.callbacks:

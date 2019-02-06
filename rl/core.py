@@ -106,7 +106,7 @@ class Agent(object):
         else:
             callbacks._set_model(self)
         import ipdb; ipdb.set_trace() # debugging starts here
-        callbacks._set_reset_episode_logger()
+        callbacks._set_reset_episode_logger(reset_episode_logger)
         callbacks._set_env(env)
         params = {
             'nb_steps': nb_steps,

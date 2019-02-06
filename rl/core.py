@@ -105,6 +105,8 @@ class Agent(object):
             callbacks.set_model(self)
         else:
             callbacks._set_model(self)
+        if hasattr(callbacks, 'reset_episode_logger'):
+            callbacks.reset_episode_logger = reset_episode_logger
         callbacks._set_env(env)
         params = {
             'nb_steps': nb_steps,

@@ -129,6 +129,7 @@ class TrainEpisodeLogger(Callback):
         self.actions = {}
         self.metrics = {}
         self.step = 0
+        self.reset_episode_logger = True
 
     def on_train_begin(self, logs):
         """ Print training values at beginning of training """

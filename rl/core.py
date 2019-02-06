@@ -105,7 +105,7 @@ class Agent(object):
             callbacks.set_model(self)
         else:
             callbacks._set_model(self)
-        import ipdb; ipdb.set_trace() # debugging starts here
+        #import ipdb; ipdb.set_trace() # debugging starts here
         callbacks._set_reset_episode_logger(reset_episode_logger)
         callbacks._set_env(env)
         params = {
@@ -225,7 +225,6 @@ class Agent(object):
                         'nb_episode_steps': episode_step,
                         'nb_steps': self.step,
                     }
-                    import ipdb; ipdb.set_trace() # debugging starts here
                     callbacks.on_episode_end(episode, episode_logs)
 
                     episode += 1

@@ -105,6 +105,7 @@ class Agent(object):
             callbacks.set_model(self)
         else:
             callbacks._set_model(self)
+        import ipdb; ipdb.set_trace() # debugging starts here
         callbacks._set_reset_episode_logger()
         callbacks._set_env(env)
         params = {
@@ -126,7 +127,6 @@ class Agent(object):
         try:
             while self.step < nb_steps:
                 if observation is None:  # start of a new episode
-                    import ipdb; ipdb.set_trace() # debugging starts here
                     callbacks.on_episode_begin(episode)
                     episode_step = np.int16(0)
                     episode_reward = np.float32(0)

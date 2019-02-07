@@ -197,7 +197,6 @@ class Agent(object):
                     done = True
                 metrics = self.backward(reward, terminal=done)
                 episode_reward += reward
-                print(reward)
 
                 step_logs = {
                     'action': action,

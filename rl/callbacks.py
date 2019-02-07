@@ -200,7 +200,7 @@ class TrainEpisodeLogger(Callback):
             'obs_max': np.max(self.observations[episode]),
             'metrics': metrics_text,
         }
-        print(template.format(**variables), end='\r')
+        print(template.format(**variables))
 
         if self.reset_episode_logger:
             # Free up resources.

@@ -77,12 +77,12 @@ class Agent(object):
             nb_max_episode_steps (integer): Number of steps per episode that the agent performs before
                 automatically resetting the environment. Set to `None` if each episode should run
                 (potentially indefinitely) until the environment signals a terminal state.
+            reset_episode_logger(bool): Determines whether the episode logger retains data from previous episodes.
 
         # Returns
             A `keras.callbacks.History` instance that recorded the entire training process.
         """
         
-        print('should run trace')
         if not self.compiled:
             raise RuntimeError('Your tried to fit your agent but it hasn\'t been compiled yet. Please call `compile()` before `fit()`.')
         if action_repetition < 1:

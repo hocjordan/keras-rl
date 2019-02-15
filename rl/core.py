@@ -401,6 +401,13 @@ class Agent(object):
 
         return history
 
+    def  saliency(self):
+        """ Runs a set of observations through the agent and returns the absolute value
+        of the perturbation that results from jittering that observation.
+        Currently only for lunar lander.
+        """
+        pass
+
     def reset_states(self):
         """Resets all internally kept states after an episode is completed.
         """

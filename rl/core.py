@@ -242,7 +242,7 @@ class Agent(object):
         return callbacks
 
     def test(self, env, nb_episodes=1, action_repetition=1, callbacks=None, visualize=True,
-             nb_max_episode_steps=None, nb_max_start_steps=0, start_step_policy=None, verbose=1):
+             nb_max_episode_steps=None, nb_max_start_steps=0, start_step_policy=None, verbose=1, reset_episode_logger=True):
         """Callback that is called before training begins.
 
         # Arguments
@@ -292,6 +292,7 @@ class Agent(object):
             callbacks.set_model(self)
         else:
             callbacks._set_model(self)
+        callbacks._set_reset_episode_logger(reset_episode_logger)
         callbacks._set_env(env)
         params = {
             'nb_episodes': nb_episodes,
